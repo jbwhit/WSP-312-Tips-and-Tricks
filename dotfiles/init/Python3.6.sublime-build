@@ -1,0 +1,4 @@
+{
+    "cmd": ["/Users/jonathan/miniconda3/envs/py3/bin/python", "-u", "$file"],
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)"
+}
