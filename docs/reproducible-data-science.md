@@ -6,9 +6,7 @@ This series of videos is excellent: https://jakevdp.github.io/blog/2017/03/03/re
 
 Relatively new way of creating projects to be shared among teams: http://anaconda-project.readthedocs.io/en/latest/tutorial.html
 
-Have trouble with the data collection piece.
-
-start with [cookiecutter](https://drivendata.github.io/cookiecutter-data-science/) outline
+Have trouble with the data collection piece, but here's where I am currently: https://github.com/jbwhit/coal-exploration-2
 
 ```bash
 $ cookiecutter https://github.com/drivendata/cookiecutter-data-science

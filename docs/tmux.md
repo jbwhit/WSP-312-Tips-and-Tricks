@@ -1,8 +1,6 @@
 # Tmux
 
 
-
-
 ## Mac specific 
 
 ```bash
