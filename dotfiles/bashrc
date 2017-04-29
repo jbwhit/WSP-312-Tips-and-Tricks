@@ -1,0 +1,58 @@
+
+
+
+source ~/.alias
+source ~/.colors
+source ~/.inputrc
+source ~/.functions
+
+export PS1="\n# \w\n# \[${Green}\]\u:\h \[${Color_Off}\]\[${Cyan}\]\${git_branch}\[${Red}\]\$git_dirty\[${Color_Off}\]$ "
+
+
+
+
+##########################################################################################
+    SSH_ENV="$HOME/.ssh/env"
+    function start_agent {
+        echo "Initialising new SSH agent..."
+        /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+        echo succeeded
+        chmod 600 "${SSH_ENV}"
+        . "${SSH_ENV}" > /dev/null
+        /usr/bin/ssh-add;
+    }
+    # Source SSH settings, if applicable
+    if [ -f "${SSH_ENV}" ]; then
+        . "${SSH_ENV}" > /dev/null
+        #ps ${SSH_AGENT_PID} doesn't work under cywgin
+        ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+            start_agent;
+        }
+    else
+        start_agent;
+    fi
+########################################################################################
+
+
+
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
+
+# git
+if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+    . `brew --prefix`/etc/bash_completion.d/git-completion.bash
+fi
+
+# setup here: https://www.iterm2.com/documentation-shell-integration.html
+source ~/.iterm2_shell_integration.`basename $SHELL`
+
+# You have to run this commented code first before this will work
+# mkdir ~/.bash
+# cd ~/.bash
+# git clone git://github.com/jimeh/git-aware-prompt.git
+export GITAWAREPROMPT=~/.bash/git-aware-prompt
+source $GITAWAREPROMPT/main.sh
+
+
