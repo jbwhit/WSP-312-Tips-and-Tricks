@@ -3,6 +3,9 @@
 Rather scattered documentation over at: [Anaconda.org](https://docs.continuum.io/anaconda-cloud/using) -- hides some really useful functionality.
 
 ```bash
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+
+
 conda update conda
 conda config --set always_yes yes
 conda config --append channels conda-forge
@@ -12,6 +15,7 @@ Add the `-q` flag can make this install quietly.
 packages='pip
 anaconda-client
 anaconda-project
+cookiecutter
 jupyter
 ipyparallel
 ipython-sql
@@ -21,6 +25,7 @@ jupyter_contrib_nbextensions
 pyparsing
 matplotlib
 seaborn
+xlrd
 mkl
 mpld3
 pandas
