@@ -2,11 +2,7 @@
 # Bash script that creates users based on github userid
 # creates notebooks directory and imports github's public keys
 
-users='itzakehrlich
-amoosa
-jbwhit
-jbagd
-'
+users=$(cat users_SECRET)
 
 for username in ${users};
 do
@@ -30,3 +26,5 @@ for username in ${users};
 do
     echo ssh "${username}"@54.183.80.165
 done
+
+echo "Add to jupyter_config file"
