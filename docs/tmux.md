@@ -94,6 +94,14 @@ bind -n M-Down select-pane -D
 ## Mouse mode
 
 ```bash
+# Enable mouse mode (tmux 2.1 and above)
+set -g mouse on
+
+```
+
+## Full File
+
+```bash
 
 # Set a Ctrl-b shortcut for reloading your tmux config
 bind r source-file ~/.tmux.conf
